@@ -1,13 +1,7 @@
 import pandas as pd
 from pandas_datareader import data, wb
 import re
-import requests_cache
 import datetime
-
-start = datetime.datetime(2004, 1, 1)
-end = datetime.datetime(2014, 1, 1)
-df = data.get_data_google('GOOGLEINDEX_US:AUTO', start, end)
-df.tail() # works!
 
 GoogleDomesticTrends = '''
     - GOOGLEINDEX_US:ADVERT
@@ -67,7 +61,6 @@ GoogleDomesticTrends = '''
     '''
 
 trend_ticknames = re.findall(r'[A-Z_:]{14,}', GoogleDomesticTrends)
-trend_ticknames[:3]
 
 start = datetime.datetime(2004, 1, 1)
 half = datetime.datetime(2010, 12, 31)
@@ -75,9 +68,6 @@ half_ = datetime.datetime(2011, 1, 1)
 
 gt1 = data.get_data_google(trend_ticknames, start, half)
 gt2 = data.get_data_google(trend_ticknames, half_)
-gt1
-gt1['Close'].head()
 
 googletrends_df = gt1['Close'].append(gt2['Close'])
 googletrends_df.to_excel('GoogleDomesticTrends.xlsx')
-googletrends_df.to_clipboard()
