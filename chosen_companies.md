@@ -16,8 +16,8 @@
     3. Black Diamond, Inc.	**BDE** nondurables
 
 
-    1. Currency
-        1. **USDGBP** sector- FOREX **-- FAIL**
+1. Currency
+    1. **USDGBP** sector- FOREX **-- FAIL**
     6. Pinnacle Foods, Inc.	**PF** nondurables **-- FAIL**
     1. Tethys Petroleum Limited  **TETHF**	energy **-- FAIL**
     4. Achaogen, Inc.	**AKAO** health **-- FAIL**
